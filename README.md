@@ -91,6 +91,8 @@ to virtio. Can be set to `:default` if you want to use the KVM default setting.
 Possible values include: ne2k_isa i82551 i82557b i82559er ne2k_pci pcnet rtl8139 e1000 virtio.
 * `video_model` - The model of the video adapter. Default to cirrus. Can also be
 set to vga.
+* `disk_bus` - disk interface to show virtual disk to guest: 'virtio' or 'sata', 'scsi'
+  When importing VirtualBox box, it may be useful to specify it.
 
 ## Specs
 

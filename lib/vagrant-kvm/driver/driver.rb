@@ -323,6 +323,14 @@ module VagrantPlugins
           @conn.define_domain_xml(definition.as_xml)
         end
 
+        def set_diskbus(disk_bus)
+          domain = @conn.lookup_domain_by_uuid(@uuid)
+          definition = Util::VmDefinition.new(domain.xml_desc)
+          definition.update(:disk_bus => disk_bus)
+          domain.undefine
+          @conn.define_domain_xml(definition.as_xml)
+        end
+
         # Starts the virtual machine.
         def start
           domain = @conn.lookup_domain_by_uuid(@uuid)
