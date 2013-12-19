@@ -93,6 +93,9 @@ Possible values include: ne2k_isa i82551 i82557b i82559er ne2k_pci pcnet rtl8139
 set to vga.
 * `disk_bus` - disk interface to show virtual disk to guest: 'virtio' or 'sata', 'scsi'
   When importing VirtualBox box, it may be useful to specify it.
+* `image_mode` - Possible value are `clone` or `cow`, defaults to `cow`. If set
+to `clone`, the image disk will be copied rather than use the original box
+image. This is slower but allows multiple VMs to be booted at the same time.
 
 ## Specs
 
