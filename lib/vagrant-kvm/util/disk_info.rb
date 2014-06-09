@@ -3,6 +3,7 @@ module VagrantPlugins
     module Util
       class DiskInfo
         include Errors
+        include Commands
 
         attr_reader :backing, :capacity, :cluster, :size, :type
 
@@ -13,7 +14,7 @@ module VagrantPlugins
           @backing = nil
           @cluster = nil
           begin
-            diskinfo = %x[qemu-img info #{vol_path}]
+            diskinfo = run_command("qemu-img info #{vol_path}")
             diskinfo.each_line do |line|
               case line
               when /^file format:/

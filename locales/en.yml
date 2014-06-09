@@ -15,6 +15,6 @@ en:
       kvm_fail_image_conversion: |-
         Failed to convert image to specified format.
       kvm_failed_command: |-
-        System command %{cmd} returned with error code %{res}.
+        System command %{cmd} returned with error code %{res}. Stdout: %{stdout}. Stderr: %{stderr}
       kvm_bad_box_format: |-
         Unsupported box format.

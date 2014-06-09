@@ -1,3 +1,5 @@
+require 'open3'
+
 module VagrantPlugins
   module ProviderKvm
     module Util
@@ -11,10 +13,11 @@ module VagrantPlugins
         end
 
         def run_command(cmd)
-          unless res = system(cmd)
-            raise Errors::KvmFailedCommand, cmd: cmd, res: res
+          stdout, stderr, status = Open3.capture3(cmd)
+          unless status.success?
+            raise Errors::KvmFailedCommand, cmd: cmd, res: status.exitstatus, stdout: stdout, stderr: stderr
           end
-          res
+          stdout
         end
       end
     end

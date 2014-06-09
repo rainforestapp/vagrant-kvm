@@ -14,6 +14,8 @@ module VagrantPlugins::ProviderKvm::Errors
         actual: "",
         cmd: "",
         res: "",
+        stdout: "",
+        stderr: "",
       }
 
       descendants.each do |klass|
