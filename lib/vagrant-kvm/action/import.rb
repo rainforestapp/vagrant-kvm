@@ -35,7 +35,8 @@ module VagrantPlugins
             :cpu_model     => provider_config.cpu_model,
             :machine_type  => provider_config.machine_type,
             :network_model => provider_config.network_model,
-            :video_model   => provider_config.video_model
+            :video_model   => provider_config.video_model,
+            :volume_cache  => provider_config.volume_cache
           }.merge(args)
 
           # Import the virtual machine

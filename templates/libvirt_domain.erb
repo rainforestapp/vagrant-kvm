@@ -22,7 +22,7 @@
   <devices>
     <emulator><%= qemu_bin %></emulator>
     <disk type='file' device='disk'>
-      <driver name='qemu' type='<%= image_type %>'/>
+      <driver name='qemu' type='<%= image_type %>' <% if volume_cache %>cache='<%= volume_cache %>'<% end %>/>
       <source file='<%= disk %>'/>
       <target dev='vda' bus='<%= disk_bus %>'/>
   <% if disk_bus == 'virtio' %>

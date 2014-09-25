@@ -53,7 +53,8 @@ module VagrantPlugins
             :image_type  => doc.elements["//devices/disk/driver"].attributes["type"],
             :qemu_bin    => doc.elements["/domain/devices/emulator"].text,
             :video_model => doc.elements["/domain/devices/video/model"].attributes["type"],
-            :disk_bus    => doc.elements["//devices/disk/target"].attributes["bus"]
+            :disk_bus    => doc.elements["//devices/disk/target"].attributes["bus"],
+            :volume_cache => doc.elements["//devices/disk/driver"].attributes["cache"],
           })
           model_node = doc.elements["//devices/interface/model"]
           if model_node

@@ -56,7 +56,13 @@ describe VagrantPlugins::ProviderKvm::Util::VmDefinition do
         should_default(:video_model, "cirrus")
         should_set(:video_model, "vga")
       end
-    end
+
+      it "sets the volume cache strategy" do
+        should_set(:volume_cache, "writeback") do |xml|
+          xml.should include("cache='writeback'")
+        end
+      end
+     end
   end
 
   private
