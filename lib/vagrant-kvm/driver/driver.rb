@@ -41,7 +41,7 @@ module VagrantPlugins
           @uuid = uuid
           # This should be configurable
           @pool_name = "vagrant"
-          @network_name = "vagrant"
+          @network_name = "vmstack_net"
 
           load_kvm_module!
 

@@ -20,7 +20,7 @@ module VagrantPlugins
             options = network_options if type == :private_network
           end
 
-          options[:ip] = "192.168.123.10" unless options.has_key?(:ip)
+          options[:ip] = "10.0.0.10" unless options.has_key?(:ip)
           addr = options[:ip].split(".")
           addr[3] = "1"
           base_ip = addr.join(".")

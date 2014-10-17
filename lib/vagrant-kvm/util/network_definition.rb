@@ -13,11 +13,11 @@ module VagrantPlugins
           self.attributes = {
             :forward => "nat",
             :domain_name => "vagrant.local",
-            :base_ip => "192.168.192.1",
-            :netmask => "255.255.255.0",
+            :base_ip => "10.0.0.1",
+            :netmask => "255.0.0.0",
             :range => {
-              :start => "192.168.192.100",
-              :end => "192.168.192.200",
+              :start => "10.128.0.1",
+              :end => "10.128.255.254",
             },
             :hosts => [],
             name: name,
