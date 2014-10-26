@@ -63,6 +63,8 @@ module VagrantPlugins
       attr_accessor :machine_type
       attr_accessor :network_model
       attr_accessor :video_model
+      attr_accessor :kernel
+      attr_accessor :cpu_type
 
       # volume caching strategy
       # default: qemu default
@@ -85,6 +87,8 @@ module VagrantPlugins
         @machine_type     = UNSET_VALUE
         @network_model    = UNSET_VALUE
         @video_model      = UNSET_VALUE
+        @kernel           = UNSET_VALUE
+        @cpu_type         = UNSET_VALUE
         @volume_cache     = UNSET_VALUE
       end
 
@@ -144,6 +148,8 @@ module VagrantPlugins
         @vnc_password = nil if @vnc_password == UNSET_VALUE
         @vnc_port = -1 if @vnc_port == UNSET_VALUE
         @machine_type = "pc-1.2" if @machine_type == UNSET_VALUE
+        @kernel = nil if @kernel == UNSET_VALUE
+        @cpu_type = nil if @cpu_type == UNSET_VALUE
         @network_model = "virtio" if @network_model == UNSET_VALUE
         @video_model = "cirrus" if @video_model == UNSET_VALUE
         @volume_cache = nil if @volume_cache == UNSET_VALUE

@@ -75,6 +75,18 @@ module VagrantPlugins
               :vnc_password => attrs['passwd']
             })
           end
+          kernel = doc.elements["//domain/os/kernel"]
+          if kernel
+            update({
+              :kernel => kernel.text
+            })
+          end
+          cpu_type = doc.elements["//domain/cpu/model"]
+          if cpu_type
+            update({
+              :cpu_type => cpu_type.text
+            })
+          end
         end
 
         def as_xml
