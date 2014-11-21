@@ -33,7 +33,6 @@ module VagrantPlugins
             :qemu_bin      => provider_config.qemu_bin,
             :cpus          => provider_config.core_number,
             :cpu_model     => provider_config.cpu_model,
-            :network_model => provider_config.network_model,
             :video_model   => provider_config.video_model,
             :volume_cache  => provider_config.volume_cache
           }.merge(args)
