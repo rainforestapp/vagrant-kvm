@@ -20,13 +20,13 @@ module VagrantPlugins
             options = network_options if type == :private_network
           end
 
-          options[:ip] = "10.0.0.10" unless options.has_key?(:ip)
+          options[:ip] = "10.0.0.1" unless options.has_key?(:ip)
           addr = options[:ip].split(".")
           addr[3] = "1"
           base_ip = addr.join(".")
-          addr[3] = "100"
+          addr[3] = "2"
           start_ip = addr.join(".")
-          addr[3] = "200"
+          addr[3] = "253"
           end_ip = addr.join(".")
           range = {
               :start => start_ip,
